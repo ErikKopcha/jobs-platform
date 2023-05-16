@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
-import { COLORS, FONT, SIZES } from '../../../constants';
+import { COLORS, SIZES } from '@src/constants';
 
-const dynamicTab = (activeJobType: string, item: string) => ({
+export const dynamicTab = (activeJobType: string, item: string) => ({
   paddingVertical: SIZES.small / 2,
   paddingHorizontal: SIZES.small,
   borderRadius: SIZES.medium,
@@ -9,8 +9,7 @@ const dynamicTab = (activeJobType: string, item: string) => ({
   borderColor: activeJobType === item ? COLORS.secondary : COLORS.gray2,
 });
 
-const dynamicTabText = (activeJobType: string, item: string) => ({
-  fontFamily: FONT.medium,
+export const dynamicTabText = (activeJobType: string, item: string) => ({
   color: activeJobType === item ? COLORS.secondary : COLORS.gray2,
 });
 
@@ -19,12 +18,10 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   userName: {
-    fontFamily: FONT.regular,
     fontSize: SIZES.large,
     color: COLORS.secondary,
   },
   welcomeMessage: {
-    fontFamily: FONT.bold,
     fontSize: SIZES.xLarge,
     color: COLORS.primary,
     marginTop: 2,
@@ -46,7 +43,6 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   searchInput: {
-    fontFamily: FONT.regular,
     width: '100%',
     height: '100%',
     paddingHorizontal: SIZES.medium,

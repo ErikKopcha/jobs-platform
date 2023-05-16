@@ -1,6 +1,6 @@
 import React from 'react';
-import { COLORS, icons, images } from '../../constants';
-import { ScreenHeaderBtn } from '../../components';
+import { COLORS, icons, images } from '@src/constants';
+import { ScreenHeaderBtn } from '@src/components';
 
 export const HOME_SCREEN_OPTIONS = {
   headerStyle: {

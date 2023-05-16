@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { COLORS, FONT, SHADOWS, SIZES } from 'constants';
+import { COLORS, SHADOWS, SIZES } from 'constants';
 
 interface JobItem {
   job_id: string;
@@ -27,13 +27,11 @@ const dynamicLogoContainer = (selectedJob: string, item: JobItem) => ({
 
 const dynamicJobName = (selectedJob: string, item: JobItem) => ({
   fontSize: SIZES.large,
-  fontFamily: FONT.medium,
   color: selectedJob === item.job_id ? COLORS.white : COLORS.primary,
 });
 
 const dynamicPublisher = (selectedJob: string, item: JobItem) => ({
   fontSize: SIZES.medium - 2,
-  fontFamily: FONT.bold,
   color: selectedJob === item.job_id ? COLORS.white : COLORS.primary,
 });
 
@@ -44,7 +42,6 @@ const styles = StyleSheet.create({
   },
   companyName: {
     fontSize: SIZES.medium,
-    fontFamily: FONT.regular,
     color: '#B3AEC6',
     marginTop: SIZES.small / 1.5,
   },
@@ -59,7 +56,6 @@ const styles = StyleSheet.create({
   },
   location: {
     fontSize: SIZES.medium - 2,
-    fontFamily: FONT.regular,
     color: '#B3AEC6',
   },
 });
