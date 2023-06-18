@@ -1,3 +1,4 @@
 import Home from './Home';
+import DetailJob from './DetailJob';
 
-export {Home};
+export { Home, DetailJob };

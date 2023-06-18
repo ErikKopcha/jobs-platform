@@ -13,7 +13,7 @@ import { default as JobFooter } from './JobDetails/Footer';
 import Specifics from './JobDetails/Specifics';
 
 // common
-import Index from './common/Cards/NearbyJobCard';
+import NearbyJobCard from './common/Cards/NearbyJobCard';
 
 export {
   ScreenHeaderBtn,
@@ -25,5 +25,5 @@ export {
   JobAbout,
   JobFooter,
   Specifics,
-  Index,
+  NearbyJobCard,
 };

@@ -1,38 +1,33 @@
 import { StyleSheet } from 'react-native';
 
-import { COLORS, SHADOWS, SIZES } from 'constants';
+import { COLORS, SHADOWS, SIZES } from '@src/constants';
+import { JobItem } from '@src/types';
 
-interface JobItem {
-  job_id: string;
-}
-
-const dynamicContainer = (selectedJob: string, item: JobItem) => ({
+export const dynamicContainer = (selectedJob: string, item: JobItem) => ({
   width: 250,
   padding: SIZES.xLarge,
-  backgroundColor: selectedJob === item.job_id ? COLORS.primary : '#FFF',
+  backgroundColor:
+    !!item && selectedJob === item.job_id ? COLORS.primary : '#FFF',
   borderRadius: SIZES.medium,
-  justifyContent: 'space-between',
   ...SHADOWS.medium,
   shadowColor: COLORS.white,
 });
 
-const dynamicLogoContainer = (selectedJob: string, item: JobItem) => ({
+export const dynamicLogoContainer = (selectedJob: string, item: JobItem) => ({
   width: 50,
   height: 50,
-  backgroundColor: selectedJob === item.job_id ? '#FFF' : COLORS.white,
+  backgroundColor: item && selectedJob === item.job_id ? '#FFF' : COLORS.white,
   borderRadius: SIZES.medium,
-  justifyContent: 'center',
-  alignItems: 'center',
 });
 
-const dynamicJobName = (selectedJob: string, item: JobItem) => ({
+export const dynamicJobName = (selectedJob: string, item: JobItem) => ({
   fontSize: SIZES.large,
-  color: selectedJob === item.job_id ? COLORS.white : COLORS.primary,
+  color: item && selectedJob === item.job_id ? COLORS.white : COLORS.primary,
 });
 
-const dynamicPublisher = (selectedJob: string, item: JobItem) => ({
+export const dynamicPublisher = (selectedJob: string, item: JobItem) => ({
   fontSize: SIZES.medium - 2,
-  color: selectedJob === item.job_id ? COLORS.white : COLORS.primary,
+  color: item && selectedJob === item.job_id ? COLORS.white : COLORS.primary,
 });
 
 const styles = StyleSheet.create({
