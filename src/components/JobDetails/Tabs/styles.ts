@@ -1,8 +1,8 @@
 import { StyleSheet } from 'react-native';
 
-import { COLORS, SHADOWS, SIZES } from 'constants';
+import { COLORS, SHADOWS, SIZES } from '@src/constants';
 
-const dynamicBtn = (name: string, activeTab: string) => ({
+export const dynamicBtn = (name: string, activeTab: string) => ({
   paddingVertical: SIZES.medium,
   paddingHorizontal: SIZES.xLarge,
   backgroundColor: name === activeTab ? COLORS.primary : '#F3F4F8',
@@ -12,8 +12,7 @@ const dynamicBtn = (name: string, activeTab: string) => ({
   shadowColor: COLORS.white,
 });
 
-const dynamicBtnText = (name: string, activeTab: string) => ({
-  fontFamily: 'DMMedium',
+export const dynamicBtnText = (name: string, activeTab: string) => ({
   fontSize: SIZES.small,
   color: name === activeTab ? '#C3BFCC' : '#AAA9B8',
 });

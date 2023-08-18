@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { COLORS, SIZES } from 'constants';
+import { COLORS, SIZES } from '@src/constants';
 
 const styles = StyleSheet.create({
   container: {
@@ -8,7 +8,9 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    padding: SIZES.small,
+    paddingHorizontal: SIZES.large,
+    paddingTop: SIZES.small,
+    paddingBottom: SIZES.large,
     backgroundColor: '#FFF',
     justifyContent: 'space-between',
     alignItems: 'center',
