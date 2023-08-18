@@ -1,5 +1,5 @@
 import { HOME_SCREEN_OPTIONS } from '@src/screens/Home/constants';
-import { DetailJob, Home } from '@src/screens';
+import { DetailJob, Home, JobSearch } from '@src/screens';
 import { DETAIL_JOB_SCREEN_OPTIONS } from '@src/screens/DetailJob/constants';
 import React from 'react';
 
@@ -19,5 +19,12 @@ export const ROUTE_CONFIG = [
     name: 'Job Details',
     component: DetailJob,
     options: DETAIL_JOB_SCREEN_OPTIONS,
+  },
+  {
+    name: 'search',
+    component: JobSearch,
+    options: {
+      headerTitle: 'Search Result',
+    },
   },
 ] as IROUTE_CONFIG[];

@@ -16,27 +16,31 @@ import { useNavigation } from '@react-navigation/native';
 const JOB_TYPES = ['Full-time', 'Part-time', 'Contractor'];
 
 const Welcome = (): React.ReactElement => {
+  const [searchTerm, setSearchTerm] = useState<string>('');
+
   const navigation = useNavigation();
-  const [searchValue, setSearchValue] = useState<string>('');
   const [activeJobType, setActiveJobType] = useState<string>(
     JOB_TYPES[0] || '',
   );
 
   const onChangeSearchValue = useCallback(
     ({ nativeEvent }: NativeSyntheticEvent<TextInputChangeEventData>) => {
-      setSearchValue(nativeEvent.text);
+      setSearchTerm(nativeEvent.text);
     },
-    [],
+    [setSearchTerm],
   );
 
   const onSelectJobType = useCallback(
     (jobType: string) => {
-      console.log({ jobType });
       setActiveJobType(jobType);
-      navigation.navigate(`/search/${jobType}` as never);
+      navigation.navigate('search' as never, { id: jobType } as never);
     },
     [navigation],
   );
+
+  const onSearch = useCallback(() => {
+    navigation.navigate('search' as never, { id: searchTerm } as never);
+  }, [navigation, searchTerm]);
 
   return (
     <View>
@@ -47,14 +51,17 @@ const Welcome = (): React.ReactElement => {
       <View style={styles.searchContainer}>
         <View style={styles.searchWrapper}>
           <TextInput
-            value={searchValue}
+            value={searchTerm}
             onChange={onChangeSearchValue}
             placeholder="What are your looking for?"
             style={styles.searchInput}
           />
         </View>
 
-        <TouchableOpacity style={styles.searchBtn}>
+        <TouchableOpacity
+          disabled={!searchTerm}
+          style={styles.searchBtn}
+          onPress={onSearch}>
           <Image
             source={icons.search}
             resizeMode="contain"

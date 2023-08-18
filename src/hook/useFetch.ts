@@ -13,8 +13,8 @@ interface IUseFetchReturns<T> {
   error: string | null;
 }
 
-const API_URL = 'https://jsearch.p.rapidapi.com';
-const RAPID_API_KEY = 'c1e913e40cmshb43bbd6ec50979ap1b0706jsn42868e8c7a83';
+export const API_URL = 'https://jsearch.p.rapidapi.com';
+export const RAPID_API_KEY = '';
 
 const useFetch = <T>({
   endpoint,
